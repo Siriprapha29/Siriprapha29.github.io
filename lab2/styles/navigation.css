@@ -1,0 +1,46 @@
+body {
+    margin: 0px ;
+}
+
+ul {
+    list-style-type: none;
+    margin: 8px 0px;
+    padding: 0px;
+    overflow: hidden; 
+    background-color: black;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: yellow;
+}
+
+li a:active {
+    background-color: purple;
+}
+
+.unordered {
+    background-color: aqua;
+    padding: 8px;
+    width: 200px;
+    margin: 25px;
+    border: 4px blue solid;
+}
+
+.ordered {
+    background-color: chartreuse;
+    padding: 8px;
+    width: 200px;
+    margin: 25px;
+    border: 4px green solid;
+}
+.list {
+    margin: 0px 25px;
+}
