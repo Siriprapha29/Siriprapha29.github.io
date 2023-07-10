@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grids</title>
+    <h1>TABLET</h1>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            font-size: 30px;
+            grid-auto-rows: minmax(100px, auto);
+            grid-auto-columns: minmax(100x, auto); 
+
+        }
+        .item1 {
+            grid-column: 1/5;
+            grid-row: 1;
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+        }
+        .item2 {
+            grid-column: 1/5;
+            grid-row: 2/5 ;
+            background-color: #1481BA;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+        .item3 {
+            grid-column: -1;
+            grid-row: 5/12;
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 300px 0px;
+
+        }
+        .item4 {
+            grid-column: 2/5;
+            grid-row: 5/8;
+            background-color: #14213D;
+            color: white;
+            text-align: center;
+            padding: 125px 0;
+
+        } 
+        .item5 {
+            grid-column: 2/5;
+            grid-row: 8/10;
+            background-color: #F4D35E;
+            color: black;
+            text-align: center;
+            padding: 80px 0;
+        }
+        .item6 {
+            grid-column: 2/4;
+            grid-row: 10/12;
+            background-color: green;
+            color: black;
+            text-align: center;
+            padding: 80px 0;
+
+        }
+        .item7 {
+            grid-column: 4/5;
+            grid-row: 10/12;
+            background-color: #81E4DA;
+            color: black;
+            text-align: center;
+            padding: 80px 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item1">HEADER</div>
+        <div class="item2">HERO</div>
+        <div class="item3">MENU</div>  
+        <div class="item4">MAIN</div>
+        <div class="item5">BANNER</div>
+        <div class="item6">EXTRA</div>
+        <div class="item7">IMAGE</div>
+      </div>
+</body>
+</html>
