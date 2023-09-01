@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My GitHub Info</title>
+    <style>
+        #avatar {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+            border: 5px solid yellow;
+        }
+
+        #name {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="name"></h1>
+    <img id="avatar" src="" alt="My Avatar">
+
+    <script>
+        // กำหนดชื่อ GitHub 
+        const username = "siriprapha29";
+
+        // สร้าง URL ดึงข้อมูลจาก GitHub API
+        const apiUrl = `https://api.github.com/users/${username}`;
+
+        // ดึงข้อมูลจาก GitHub API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const nameElement = document.getElementById("name");
+                nameElement.textContent = data.login;
+                const githubUrl = data.html_url;
+                const nameLink = document.createElement("a");
+                nameLink.href = githubUrl;
+                nameLink.target = "_blank";
+                nameLink.textContent = data.login;
+                nameElement.innerHTML = '';
+                nameElement.appendChild(nameLink);
+
+                // แสดงรูปภาพ 
+                const avatarElement = document.getElementById("avatar");
+                avatarElement.src = data.avatar_url;
+            })
+            .catch(error => {
+                console.error("เกิดข้อผิดพลาดในการดึงข้อมูล:", error);
+            });
+    </script>
+</body>
+
+</html>
