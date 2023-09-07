@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <title>Reading Students Information</title>
+<head>
+    <style>
+        .bold-name {
+            font-weight: bold; 
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Reading Students Information</h1>
+    <p id="demo"></p>
+    <script>
+        fetch("lib/students.json")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                const wclass = data.wclass;
+                let output = "";
+
+                for (let i = 0; i < wclass.length; i++) {
+                    const student = wclass[i].student;
+                    const id = student['@attributes'].id;
+                    const name = student.name;
+                    const skill = student.skill;
+
+                    output += (i + 1) + ". " + id + " <span class='bold-name'>" + name + "</span>" + "has skills " + skill + "<br>";
+                }
+
+                document.getElementById("demo").innerHTML = output;
+            })
+            .catch((error) => {
+                console.error("เกิดข้อผิดพลาด: " + error);
+            });
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Places</title>
+    <style>
+        .restaurant {
+            color: green;
+        }
+
+        .location {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        fetch("places.json")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                const results = data.results;
+                let output = "";
+
+                for (let i = 0; i < results.length; i++) {
+                    const geometry = results[i].geometry;
+                    const location = geometry.location;
+                    const restaurant = results[i].name;
+                    const lat = location.lat;
+                    const lng = location.lng;
+
+                    output += (i + 1) + ". <span class='restaurant'>name = " + restaurant
+                        + "</span><br>   <span class='location'>   location = " + lat + "  " + lng + "</span><br>";
+
+                }
+
+                document.getElementById("output").innerHTML = output;
+            })
+            .catch((error) => {
+                console.error("เกิดข้อผิดพลาด: " + error);
+            });
+    </script>
+</body>
+
+</html>
